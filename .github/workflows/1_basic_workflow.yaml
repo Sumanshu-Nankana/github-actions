@@ -11,6 +11,6 @@ jobs:
         with:
           python-version: '3.11'
       - name: Checking Python Version
-        run: python -v
+        run: python --version
       - name: Greeting Message
         run: echo "Hi Sumanshu Nankana"
