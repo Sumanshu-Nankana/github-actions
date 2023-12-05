@@ -1,0 +1,16 @@
+name: 1. Basic Workflow
+on:
+  - workflow_dispatch
+
+jobs:
+  first_job:
+    runs_on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Checking Python Version
+        run: python -v
+      - name: Greeting Message
+        run: echo "Hi Sumanshu Nankana"
