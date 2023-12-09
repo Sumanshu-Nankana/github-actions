@@ -16,15 +16,15 @@ jobs:
 
       - name: Checking List of files in repository
         run: |
-          echo "Checking the list of files in ${{ github.workspace }}
-          ls ${{ github.workspace }}"
+          echo "Checking the list of files in ${{ github.workspace }}"
+          ls ${{ github.workspace }}
 
       - name: Setting Up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - run: echo "Python 🐍 has been setup on $ {{ runner.os }} server."
+      - run: echo "Python 🐍 has been setup on ${{ runner.os }} server."
 
       - name: Checking Python Version
         run: python --version
