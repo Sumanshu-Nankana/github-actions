@@ -6,16 +6,28 @@ jobs:
   first_job:
     runs-on: ubuntu-latest
     steps:
+      - name: Checking ServerName
+        run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+
       - name: Checkout Repository
         uses: actions/checkout@v4
+        run: echo "💡 The ${{ github.repository }} has been cloned to the runner from ${{ github.ref }} branch."
+
+      - name: Checking List of files in repository
+        run: |
+          echo "Checking the list of files in ${{ github.workspace }}
+          ls ${{ github.workspace }}"
 
       - name: Setting Up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+        run: echo "Python 🐍 has been setup on $ {{ runner.os }} server."
 
       - name: Checking Python Version
         run: python --version
 
-      - name: Greeting Message
-        run: echo "Hi Sumanshu Nankana"
+      - name: Checking Job Status
+        run: echo "😊 This job's status is ${{ job.status }}."
+
+
