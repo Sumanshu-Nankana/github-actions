@@ -1,5 +1,5 @@
 name: 1. Basic Workflow
-run-name: ${{ github.actor }} is running this GitHub Actions
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
 on:
   - workflow_dispatch
 
