@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - run: echo "💡 The ${{ github.repository }} has been cloned to the runner from ${{ GITHUB_REF }} branch."
+      - run: echo "💡 The ${{ github.repository }} has been cloned to the runner from ${{ github.ref }} branch."
 
       - name: Checking List of files in repository
         run: |
