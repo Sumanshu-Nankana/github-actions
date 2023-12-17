@@ -11,7 +11,7 @@ jobs:
         run: echo ${{ vars.WELCOME }}
 
       - name: Print Environment Varibles Defined within workflow
+        run: echo " Running on ${{ HOST }} and $ {{ PORT }}
         env:
           HOST: localhost
           PORT: 8080
-        run: echo " Running on ${{ HOST }} and $ {{ PORT }}
