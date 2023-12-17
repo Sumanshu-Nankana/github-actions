@@ -5,6 +5,7 @@ on:
 env:
   FIRSTNAME: "Sumanshu"
   LASTNAME: "Nankana"
+  GREETING: ${{ vars.WELCOME }}
 
 jobs:
   first_job:
@@ -19,9 +20,10 @@ jobs:
           HOST: 'localhost'
           PORT: '8080'
 
-      - name: Printing Global environment variables using env and vars
+      - name: Printing Global environment variables using env and vars (for configuration variables)
         run: |
           echo "First Name is ${{ env.FIRSTNAME }} and Last Name is ${{ env.LASTNAME }}"
-          echo "First Name is ${{ vars.FIRSTNAME }} and Last Name is ${{ vars.LASTNAME }}"
+          echo "The value of WELCOME is ${{ env.GREETING }}"
+          echo "The value of WELCOME is ${{ vars.WELCOME }}"
 
 
