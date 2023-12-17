@@ -11,7 +11,7 @@ jobs:
         run: echo ${{ vars.WELCOME }}
 
       - name: Setup and Print Environment Variables
-        run: echo " Running on ${{ env.HOST }} and $ {{ env.PORT }}
+        run: echo " Running on ${{ env.HOST }} and ${{ env.PORT }}
         env:
           HOST: 'localhost'
           PORT: '8080'
