@@ -10,10 +10,9 @@ jobs:
       - name: Print Repository Variable
         run: echo ${{ vars.WELCOME }}
 
-      - name: Setup Environment Variables
+      - name: Setup and Print Environment Variables
+        run: echo " Running on ${{ HOST }} and $ {{ PORT }}
         env:
           HOST: 'localhost'
           PORT: '8080'
 
-      - name: Print Environment Varibles Defined within workflow
-        run: echo " Running on ${{ HOST }} and $ {{ PORT }}
