@@ -1,0 +1,17 @@
+name: 2. Variables
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  - workflow_dispatch
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Repository Variable
+        run: echo ${{ vars.WELCOME }}
+
+      - name: Print Environment Varibles Defined within workflow
+        env:
+          HOST: localhost
+          PORT: 8080
+        run: echo " Running on ${{ HOST }} and $ {{ PORT }}
