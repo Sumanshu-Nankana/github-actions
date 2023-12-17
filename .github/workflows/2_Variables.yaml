@@ -2,6 +2,9 @@ name: 2. Variables
 run-name: ${{ github.actor }} is running the ${{ github.workflow }}
 on:
   - workflow_dispatch
+env:
+  FIRSTNAME: "Sumanshu"
+  LASTNAME: "Nankana"
 
 jobs:
   first_job:
@@ -11,8 +14,14 @@ jobs:
         run: echo ${{ vars.WELCOME }}
 
       - name: Setup and Print Environment Variables
+        run: echo "Running on ${{ env.HOST }} and ${{ env.PORT }}"
         env:
           HOST: 'localhost'
           PORT: '8080'
-        run: echo "Running on ${{ env.HOST }} and ${{ env.PORT }}"
+
+      - name: Printing Global environment variables using env and vars
+        run: |
+          echo "First Name is ${{ env.FIRSTNAME }} and Last Name is ${{ env.LASTNAME }}"
+          echo "First Name is ${{ vars.FIRSTNAME }} and Last Name is ${{ vars.LASTNAME }}"
+
 
