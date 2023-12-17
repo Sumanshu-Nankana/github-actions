@@ -12,8 +12,8 @@ jobs:
 
       - name: Setup Environment Variables
         env:
-          HOST: localhost
-          PORT: 8080
+          HOST: 'localhost'
+          PORT: '8080'
 
       - name: Print Environment Varibles Defined within workflow
         run: echo " Running on ${{ HOST }} and $ {{ PORT }}
