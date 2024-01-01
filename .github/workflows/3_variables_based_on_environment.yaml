@@ -1,0 +1,15 @@
+name: 3. Variables Set for Different Environments
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  - workflow_dispatch
+
+
+jobs:
+  deploy_dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Print Dev Variables
+        run: echo "The value of CHECK_ENVIRONMENT is {{ vars.CHECK_ENVIRONMENT }}"
