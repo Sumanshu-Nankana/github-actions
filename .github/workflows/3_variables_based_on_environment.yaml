@@ -18,7 +18,7 @@ jobs:
   deploy_qa:
     runs-on: ubuntu-latest
     environment: qa
-    need: deploy_dev
+    needs: deploy_dev
     steps:
       - name: Print QA Variables
         run: echo "The value of CHECK_ENVIRONMENT is ${{ vars.CHECK_ENVIRONMENT }}"
@@ -26,7 +26,7 @@ jobs:
   deploy_prod:
     runs-on: ubuntu-latest
     environment: prod
-    need: deploy_qa
+    needs: deploy_qa
     steps:
       - name: Print PROD Variables
         run: echo "The value of CHECK_ENVIRONMENT is ${{ vars.CHECK_ENVIRONMENT }}"
