@@ -30,3 +30,4 @@ jobs:
         with:
           name: pytest-report
           path: result.html
+          retention-days: 1
