@@ -194,4 +194,4 @@ test = ["black (>=22.1.0)", "flake8 (>=4.0.1)", "pre-commit (>=2.17.0)", "tox (>
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "a890db607f2080cc9f5e145382207814b813a8077b0ae6faa66ed591ea1ac51e"
+content-hash = "df27765484f92390bac813489f49ceffd8fca741ed9950146d4c5c057984fcdc"
