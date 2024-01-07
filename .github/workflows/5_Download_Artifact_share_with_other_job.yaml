@@ -34,4 +34,4 @@ jobs:
           path: .
 
       - name: Run the Python Script
-        run: python python-script.py
+        run: python hello_script.py
