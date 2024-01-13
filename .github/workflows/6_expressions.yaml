@@ -33,6 +33,10 @@ jobs:
           path: result.html
           retention-days: 1
 
-      - name: Send Notification Email
-        if: failure()
-        run: echo "Sending Email that Upload artifact step failed"
+      - name: Always Run this Step
+        if: always()
+        run: echo "Always Running This Step"
+
+      - name: Did not run this Step if workflow get cancelled otherwise always run
+        if: success() || failure()
+        run: echo "Always Running This Step, but will not run if workflow itself cancelled"
