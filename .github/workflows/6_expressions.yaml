@@ -32,3 +32,7 @@ jobs:
           name: pytest-report
           path: result.html
           retention-days: 1
+
+      - name: Send Notification Email
+        if: failure()
+        run: echo "Sending Email that Upload artifact step failed"
