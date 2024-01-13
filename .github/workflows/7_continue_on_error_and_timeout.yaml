@@ -32,3 +32,22 @@ jobs:
           name: pytest-report
           path: result.html
           retention-days: 1
+
+  second-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: second-job-step1
+        run: echo "This is step 1"
+
+      - name: second-job-step2
+        run: |
+          echo "This is step 2"
+          exit 1
+
+  third-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: third-job-step1
+        run: echo "This is step 1"
