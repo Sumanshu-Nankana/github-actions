@@ -54,3 +54,11 @@ jobs:
     steps:
       - name: third-job-step1
         run: echo "This is step 1"
+
+  fourth-job:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+
+    steps:
+      - name: Sleep Job
+        run: sleep 80
