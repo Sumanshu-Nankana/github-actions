@@ -1,4 +1,4 @@
-name: 7. Continue on Error
+name: 7. Continue on Error and timeout
 run-name: ${{ github.actor }} is running the ${{ github.workflow }}
 on:
   workflow_dispatch
@@ -61,4 +61,4 @@ jobs:
 
     steps:
       - name: Sleep Job
-        run: sleep 80
+        run: sleep 10
