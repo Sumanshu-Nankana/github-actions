@@ -61,4 +61,4 @@ jobs:
 
     steps:
       - name: Sleep Job
-        run: sleep 10
+        run: sleep 80
