@@ -1,4 +1,4 @@
-name: 8 Startegy Matrix
+name: 8 Startegy Matrix and Fail Fast
 run-name: ${{ github.actor }} is running the ${{ github.workflow }}
 on:
   workflow_dispatch
