@@ -1,4 +1,4 @@
-name: 9. Use the Common aka Resuable Workflow
+name: 9. Reusable Workflow
 run-name: ${{ github.actor }} is running the ${{ github.workflow }}
 on:
   workflow_dispatch
