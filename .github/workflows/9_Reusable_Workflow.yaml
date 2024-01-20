@@ -5,7 +5,7 @@ on:
 
 jobs:
   build_and_test:
-      uses: ./.github/workflows/Common_Workflow.yaml
+      uses: ./.github/workflows/Common_Workflow.yaml#unit-test
 
   deploy:
     runs-on: ubuntu-latest
