@@ -1,0 +1,21 @@
+name: 9. Use the Common aka Resuable Workflow
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  workflow_dispatch
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build and Test from the Common Workflow
+        uses: .github/workflows/Common_Workflow.yaml
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build_and_test
+
+    steps:
+      - name: Deployment Step
+        run: echo "Doing the Deployment"
+
