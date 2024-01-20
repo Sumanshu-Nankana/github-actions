@@ -5,9 +5,7 @@ on:
 
 jobs:
   build_and_test:
-    steps:
-      - name: Build and Test from the Common Workflow
-        uses: ./.github/workflows/Common_Workflow.yaml
+      uses: ./.github/workflows/Common_Workflow.yaml
 
   deploy:
     runs-on: ubuntu-latest
