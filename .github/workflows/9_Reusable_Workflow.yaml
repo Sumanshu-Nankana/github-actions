@@ -6,8 +6,6 @@ on:
 jobs:
   build_and_test:
       uses: ./.github/workflows/Common_Workflow.yaml
-      with:
-        job: unit-test
 
   deploy:
     runs-on: ubuntu-latest
