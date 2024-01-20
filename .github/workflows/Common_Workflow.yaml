@@ -35,5 +35,7 @@ jobs:
   second-job:
     runs-on: ubuntu-latest
     needs: unit-test
+
     steps:
-      - run: echo "Unit Test Is Completed"
+      - name: Checking Job Status
+        run: echo "😊 This job's status is ${{ job.status }}."
