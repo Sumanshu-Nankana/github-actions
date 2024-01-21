@@ -1,0 +1,19 @@
+name: 11. Workflow Run Event
+on:
+  workflow_run:
+    workflows: ["10 Testing Workflow"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy Application
+        run: |
+          echo "Starting Deploying the Application"
+          echo "Application Deployed"
