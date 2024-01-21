@@ -1,9 +1,7 @@
 name: 12. Schedule Workflow
-#on:
-#  schedule:
-#    - cron: '* * * * *'
 on:
-  - workflow_dispatch
+  schedule:
+    - cron: '* * * * *'
 
 jobs:
   job1:
