@@ -1,0 +1,36 @@
+name: 13. Push and Pull Request Event
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  push:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry
+          poetry install --with dev --no-root
+
+      - name: Run tests and generate HTML report
+        continue-on-error: true
+        run: poetry run pytest --html=result.html
+
+      - name: Upload HTML result as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-report
+          path: result.html
+          retention-days: 1
