@@ -1,0 +1,23 @@
+name: 15. Publish Docker Image
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  - workflow_dispatch
+
+jobs:
+  build-and-publish-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Login to Dockerhub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      # https://github.com/marketplace/actions/build-and-push-docker-images
+      - name: Build and Push the DockerImage
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: user/python-app:latest
