@@ -19,4 +19,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: user/python-app:latest
+          tags: sumanshunankana/python-app:latest
