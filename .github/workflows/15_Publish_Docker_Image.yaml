@@ -18,6 +18,5 @@ jobs:
       - name: Build and Push the DockerImage
         uses: docker/build-push-action@v5
         with:
-          context: .
           push: true
           tags: user/python-app:latest
