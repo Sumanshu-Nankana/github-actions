@@ -7,9 +7,9 @@ jobs:
   build-and-publish-docker:
     runs-on: ubuntu-latest
 
-    permissions:
-      packages: write
-      contents: read
+#    permissions:
+#      packages: write
+#      contents: read
 
     steps:
       - name: Login to Dockerhub
@@ -24,4 +24,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          # format: ghcr.io/username/repository-name:latest  (should be in lower case)
           tags: ghcr.io/sumanshu-nankana/github-actions:latest
