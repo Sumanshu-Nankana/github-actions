@@ -9,6 +9,7 @@ jobs:
 
     permissions:
       packages: write
+      contents: read
 
     steps:
       - name: Login to Dockerhub
