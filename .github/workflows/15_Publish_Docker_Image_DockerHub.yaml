@@ -1,4 +1,4 @@
-name: 15. Publish Docker Image
+name: 15. Publish Docker Image to DockerHub
 run-name: ${{ github.actor }} is running the ${{ github.workflow }}
 on:
   - workflow_dispatch

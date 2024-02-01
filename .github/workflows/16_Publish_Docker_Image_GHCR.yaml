@@ -1,0 +1,23 @@
+name: 16. Publish Docker Image to ghcr.io
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  - workflow_dispatch
+
+jobs:
+  build-and-publish-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Login to Dockerhub
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # https://github.com/marketplace/actions/build-and-push-docker-images
+      - name: Build and Push the DockerImage
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: ghcr.io/sumanshunankana/python-app:latest
