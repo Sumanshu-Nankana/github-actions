@@ -7,8 +7,8 @@ jobs:
   build-and-publish-docker:
     runs-on: ubuntu-latest
 
-#    permissions:
-#      packages: write
+    permissions:
+      packages: write
 #      contents: read
 
     steps:
