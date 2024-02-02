@@ -22,6 +22,8 @@ runs:
         aws configure set default.region ${{ inputs.region }}
         aws configure set aws_access_key_id ${{ inputs.access-key-id }}
         aws configure set aws_secret_access_key ${{ inputs.secret-access-key }}
-        aws --version
+      shell: bash
+    - name: Check AWS CLI Version
+      run:  aws --version
       shell: bash
 
