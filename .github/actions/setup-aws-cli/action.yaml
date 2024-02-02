@@ -1,0 +1,27 @@
+name: "Setup AWS CLI"
+author: "Sumanshu Nankana"
+description: "Setup AWS CLI to use in github actions"
+inputs:
+  region:
+    description: "AWS Region"
+    required: true
+  access-key-id:
+    description: "AWS Access Key ID"
+    required: true
+  secret-access-key:
+    description: "AWS Secret Access Key"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Setup and Configure AWS CLI
+      run: |
+        python -m venv .venv
+        source .venv/bin/activate
+        pip install awscli
+        aws configure set default.region ${{ inputs.region }}
+        aws configure set aws_access_key_id ${{ inputs.access-key-id }}
+        aws configure set aws_secret_access_key ${{ inputs.secret-access-key }}
+        aws --version
+      shell: bash
+

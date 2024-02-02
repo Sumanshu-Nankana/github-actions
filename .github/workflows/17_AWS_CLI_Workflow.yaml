@@ -1,0 +1,22 @@
+name: 17. AWS CLI Workflow
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  - workflow_dispatch
+
+jobs:
+  aws-cli-setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup and Configure AWS CLI
+        uses: ./.github/actions/setup-aws-cli
+        with:
+          region: 'eu-west-1'
+          access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets. AWS_SECRET_ACCESS_KEY }}
+
+      - name: Run AWS Commands
+        run: aws s3 ls
