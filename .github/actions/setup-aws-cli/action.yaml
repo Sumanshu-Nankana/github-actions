@@ -14,7 +14,7 @@ inputs:
   aws-cli-version:
     description: "AWS CLI Version to Install"
     required: false
-    default: "latest"
+    default: ""
 runs:
   using: "composite"
   steps:
@@ -22,7 +22,11 @@ runs:
       run: |
         python -m venv .venv
         source .venv/bin/activate
-        pip install awscli==${{ inputs.aws-cli-version }}
+        # if aws-cli-version is empty string then install latest
+        if [ -z "${{ inputs.aws-cli-version }}" ]; then
+          pip install awscli
+        else
+          pip install awscli==${{ inputs.aws-cli-version }}
         aws configure set default.region ${{ inputs.region }}
         aws configure set aws_access_key_id ${{ inputs.access-key-id }}
         aws configure set aws_secret_access_key ${{ inputs.secret-access-key }}
