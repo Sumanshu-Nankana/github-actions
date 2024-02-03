@@ -21,4 +21,6 @@ jobs:
           output-format: json
 
       - name: Run AWS Commands
+        # aws s3 ls (command will always give output in text format irrespective of --output param)
+        # https://github.com/aws/aws-cli/issues/709
         run: aws s3api list-buckets
