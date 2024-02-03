@@ -21,4 +21,4 @@ jobs:
           output-format: json
 
       - name: Run AWS Commands
-        run: aws s3 ls
+        run: aws s3api list-buckets
