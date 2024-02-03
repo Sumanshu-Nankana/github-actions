@@ -17,6 +17,7 @@ jobs:
           region: 'eu-west-1'
           access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret-access-key: ${{ secrets. AWS_SECRET_ACCESS_KEY }}
+          aws-cli-version: 1.32.33
 
       - name: Run AWS Commands
         run: aws s3 ls
