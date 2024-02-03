@@ -15,7 +15,7 @@ jobs:
         uses: Sumanshu-Nankana/setup-aws-cli@v1
         with:
           region: "eu-west-1"
-          aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-access-key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: List S3 buckets
