@@ -11,6 +11,10 @@ inputs:
   secret-access-key:
     description: "AWS Secret Access Key"
     required: true
+  aws-cli-version:
+    description: "AWS CLI Version to Install"
+    required: false
+    default: "latest"
 runs:
   using: "composite"
   steps:
