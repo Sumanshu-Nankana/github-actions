@@ -16,7 +16,7 @@ def test_addition_with_single_number():
     assert result == -1
 
 
-# Forcing this Test to Fail
+# Make the test fail
 def test_addition_with_zero_number():
     result = app.addition()
     assert result == 1
