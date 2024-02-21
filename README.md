@@ -1,4 +1,4 @@
-# github-actions
+# learn github-actions
 
 [![1. Basic Workflow](https://github.com/Sumanshu-Nankana/github-actions/actions/workflows/1_basic_workflow.yaml/badge.svg)](https://github.com/Sumanshu-Nankana/github-actions/actions/workflows/1_basic_workflow.yaml)
 [![2. Variables](https://github.com/Sumanshu-Nankana/github-actions/actions/workflows/2_Variables.yaml/badge.svg)](https://github.com/Sumanshu-Nankana/github-actions/actions/workflows/2_Variables.yaml)
